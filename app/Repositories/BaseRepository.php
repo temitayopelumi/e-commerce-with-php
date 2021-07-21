@@ -99,5 +99,4 @@ class BaseRepository implements BaseContract
         return $this->model->find($id)->delete();
     }
 }
-    
 ?>
