@@ -8,7 +8,7 @@ class Category extends Model
 {
     protected $table = 'categories';
 
-    protected $fillable =[
+    protected $fillable = [
         'name', 'slug', 'description', 'parent_id', 'featured', 'menu', 'image'
     ];
 
@@ -18,9 +18,8 @@ class Category extends Model
         'menu'=>'boolean'
     ];
     public function setNameAttribute($value){
-        $this->attributes['name']=$value;
-        $this->attributes['slug']=str_slug($value);
-
+        $this->attributes['name'] = $value;
+        $this->attributes['slug'] = str_slug($value);
     }
     public function parent(){
         return $this->belongsTo(Category::class, 'parent_id');
